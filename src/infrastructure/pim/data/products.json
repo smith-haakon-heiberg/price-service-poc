@@ -1,0 +1,1002 @@
+[
+  {
+    "sku": "PRD-001",
+    "name": "Grohe Eurosmart kjøkkenkran krom",
+    "categoryId": "kitchen",
+    "brand": "Grohe",
+    "outletFlag": false,
+    "basePrice": 189900,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-002",
+    "name": "Hansgrohe Metris ettgreps kjøkkenbatteri",
+    "categoryId": "kitchen",
+    "brand": "Hansgrohe",
+    "outletFlag": false,
+    "basePrice": 245000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen"]
+  },
+  {
+    "sku": "PRD-003",
+    "name": "Geberit Duofix vegghengt toalett montageelement",
+    "categoryId": "bathroom",
+    "brand": "Geberit",
+    "outletFlag": false,
+    "basePrice": 398000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "stavanger"]
+  },
+  {
+    "sku": "PRD-004",
+    "name": "Oras Optima 2-greps badekarsbatteri",
+    "categoryId": "bathroom",
+    "brand": "Oras",
+    "outletFlag": false,
+    "basePrice": 167500,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim"]
+  },
+  {
+    "sku": "PRD-005",
+    "name": "Jotun Sens Evolution veggmaling hvit 10L",
+    "categoryId": "paint",
+    "brand": "Jotun",
+    "outletFlag": false,
+    "basePrice": 54900,
+    "unit": "l",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-006",
+    "name": "Bosch GSB 18V-55 slagboremaskin sett",
+    "categoryId": "tools",
+    "brand": "Bosch",
+    "outletFlag": false,
+    "basePrice": 219000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim"]
+  },
+  {
+    "sku": "PRD-007",
+    "name": "Weber Terranova Rapid gulvsparkel 5kg",
+    "categoryId": "flooring",
+    "brand": "Weber",
+    "outletFlag": false,
+    "basePrice": 18900,
+    "unit": "kg",
+    "warehouseIds": ["oslo", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-008",
+    "name": "Grohe Grohtherm 2000 termostatbatteri",
+    "categoryId": "bathroom",
+    "brand": "Grohe",
+    "outletFlag": false,
+    "basePrice": 312000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen"]
+  },
+  {
+    "sku": "PRD-009",
+    "name": "PVC avløpsrør 110mm x 3m",
+    "categoryId": "plumbing",
+    "brand": "Biltema",
+    "outletFlag": false,
+    "basePrice": 8900,
+    "unit": "m",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-010",
+    "name": "Kobberrør 15mm x 5m",
+    "categoryId": "plumbing",
+    "brand": "Biltema",
+    "outletFlag": false,
+    "basePrice": 12500,
+    "unit": "m",
+    "warehouseIds": ["oslo", "bergen", "stavanger"]
+  },
+  {
+    "sku": "PRD-011",
+    "name": "Jotun Dreki ytterpanel maling 10L grå",
+    "categoryId": "paint",
+    "brand": "Jotun",
+    "outletFlag": false,
+    "basePrice": 72000,
+    "unit": "l",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-012",
+    "name": "Bosch GWS 18V-10 vinkelsliper",
+    "categoryId": "tools",
+    "brand": "Bosch",
+    "outletFlag": true,
+    "basePrice": 149000,
+    "unit": "stk",
+    "warehouseIds": ["oslo"]
+  },
+  {
+    "sku": "PRD-013",
+    "name": "Weber flex fugsmasse hvit 310ml",
+    "categoryId": "flooring",
+    "brand": "Weber",
+    "outletFlag": false,
+    "basePrice": 4900,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-014",
+    "name": "Hansgrohe Crometta 100 dusjsett krom",
+    "categoryId": "bathroom",
+    "brand": "Hansgrohe",
+    "outletFlag": false,
+    "basePrice": 134500,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "trondheim"]
+  },
+  {
+    "sku": "PRD-015",
+    "name": "Geberit Sigma10 trykplate hvit",
+    "categoryId": "bathroom",
+    "brand": "Geberit",
+    "outletFlag": false,
+    "basePrice": 89000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "stavanger"]
+  },
+  {
+    "sku": "PRD-016",
+    "name": "Oras Electra elektronisk kjøkkenkran",
+    "categoryId": "kitchen",
+    "brand": "Oras",
+    "outletFlag": false,
+    "basePrice": 458000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen"]
+  },
+  {
+    "sku": "PRD-017",
+    "name": "Keramiske gulvfliser grå 60x60cm pk/6",
+    "categoryId": "flooring",
+    "brand": "Weber",
+    "outletFlag": false,
+    "basePrice": 38900,
+    "unit": "m2",
+    "warehouseIds": ["oslo", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-018",
+    "name": "Elektrisk gulvvarme 150W/m2 10m2",
+    "categoryId": "electrical",
+    "brand": "Bosch",
+    "outletFlag": false,
+    "basePrice": 189000,
+    "unit": "pk",
+    "warehouseIds": ["oslo", "bergen", "trondheim"]
+  },
+  {
+    "sku": "PRD-019",
+    "name": "PVC kne 90° 110mm 5-pk",
+    "categoryId": "plumbing",
+    "brand": "Biltema",
+    "outletFlag": false,
+    "basePrice": 7200,
+    "unit": "pk",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-020",
+    "name": "Jotun Visir oljegrunning 10L",
+    "categoryId": "paint",
+    "brand": "Jotun",
+    "outletFlag": true,
+    "basePrice": 43500,
+    "unit": "l",
+    "warehouseIds": ["oslo", "stavanger"]
+  },
+  {
+    "sku": "PRD-021",
+    "name": "Grohe Eurocube innbyggingsventil",
+    "categoryId": "bathroom",
+    "brand": "Grohe",
+    "outletFlag": false,
+    "basePrice": 224000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim"]
+  },
+  {
+    "sku": "PRD-022",
+    "name": "Bosch GHO 18V-Li høvelmaskin",
+    "categoryId": "tools",
+    "brand": "Bosch",
+    "outletFlag": false,
+    "basePrice": 187000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen"]
+  },
+  {
+    "sku": "PRD-023",
+    "name": "Hansgrohe Logis kjøkkenkran uttrekk krom",
+    "categoryId": "kitchen",
+    "brand": "Hansgrohe",
+    "outletFlag": false,
+    "basePrice": 278000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "stavanger"]
+  },
+  {
+    "sku": "PRD-024",
+    "name": "Ledskinne utendørs IP65 5m",
+    "categoryId": "electrical",
+    "brand": "Bosch",
+    "outletFlag": false,
+    "basePrice": 29500,
+    "unit": "m",
+    "warehouseIds": ["oslo", "trondheim"]
+  },
+  {
+    "sku": "PRD-025",
+    "name": "Weber mur- og pussemørtel 25kg",
+    "categoryId": "outdoor",
+    "brand": "Weber",
+    "outletFlag": false,
+    "basePrice": 14500,
+    "unit": "kg",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-026",
+    "name": "Oras Saga baderomskran med trekk krom",
+    "categoryId": "bathroom",
+    "brand": "Oras",
+    "outletFlag": false,
+    "basePrice": 143000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-027",
+    "name": "Laminatgulv eik 8mm AC4 2,394m2",
+    "categoryId": "flooring",
+    "brand": "Biltema",
+    "outletFlag": false,
+    "basePrice": 19900,
+    "unit": "m2",
+    "warehouseIds": ["oslo", "bergen"]
+  },
+  {
+    "sku": "PRD-028",
+    "name": "Geberit Smyle servant 55cm hvit",
+    "categoryId": "bathroom",
+    "brand": "Geberit",
+    "outletFlag": false,
+    "basePrice": 178000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "stavanger"]
+  },
+  {
+    "sku": "PRD-029",
+    "name": "Bosch GST 18V-LI stikksag",
+    "categoryId": "tools",
+    "brand": "Bosch",
+    "outletFlag": true,
+    "basePrice": 168000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen"]
+  },
+  {
+    "sku": "PRD-030",
+    "name": "Jotun Demidekk Ultimate tremaling hvit 3L",
+    "categoryId": "paint",
+    "brand": "Jotun",
+    "outletFlag": false,
+    "basePrice": 36700,
+    "unit": "l",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-031",
+    "name": "Utendørs hagekran vegg 3/4\"",
+    "categoryId": "outdoor",
+    "brand": "Biltema",
+    "outletFlag": false,
+    "basePrice": 5800,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-032",
+    "name": "Grohe Lineare dusjbatteri krom",
+    "categoryId": "bathroom",
+    "brand": "Grohe",
+    "outletFlag": false,
+    "basePrice": 267000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-033",
+    "name": "Hansgrohe Raindance Select dusjhode 300mm",
+    "categoryId": "bathroom",
+    "brand": "Hansgrohe",
+    "outletFlag": false,
+    "basePrice": 345000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen"]
+  },
+  {
+    "sku": "PRD-034",
+    "name": "Weber Vetonit gulvavrettingsmasse 25kg",
+    "categoryId": "flooring",
+    "brand": "Weber",
+    "outletFlag": false,
+    "basePrice": 17200,
+    "unit": "kg",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-035",
+    "name": "Koblingsboks IP44 grå utendørs",
+    "categoryId": "electrical",
+    "brand": "Biltema",
+    "outletFlag": false,
+    "basePrice": 8900,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-036",
+    "name": "Oras Vega 2-greps kjøkkenkran uttrekk",
+    "categoryId": "kitchen",
+    "brand": "Oras",
+    "outletFlag": false,
+    "basePrice": 342000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim"]
+  },
+  {
+    "sku": "PRD-037",
+    "name": "Polystyrenplate EPS 100 50mm 600x1200",
+    "categoryId": "outdoor",
+    "brand": "Weber",
+    "outletFlag": false,
+    "basePrice": 13400,
+    "unit": "m2",
+    "warehouseIds": ["oslo", "stavanger"]
+  },
+  {
+    "sku": "PRD-038",
+    "name": "Bosch GBH 18V-26 borhammer",
+    "categoryId": "tools",
+    "brand": "Bosch",
+    "outletFlag": false,
+    "basePrice": 298000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-039",
+    "name": "Geberit Acanto toalettsete softclose",
+    "categoryId": "bathroom",
+    "brand": "Geberit",
+    "outletFlag": false,
+    "basePrice": 98000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim"]
+  },
+  {
+    "sku": "PRD-040",
+    "name": "Jotun Multiprimer grunnmaling 10L",
+    "categoryId": "paint",
+    "brand": "Jotun",
+    "outletFlag": false,
+    "basePrice": 48200,
+    "unit": "l",
+    "warehouseIds": ["oslo", "bergen", "stavanger"]
+  },
+  {
+    "sku": "PRD-041",
+    "name": "PP-rør kaldtvann 20mm x 5m",
+    "categoryId": "plumbing",
+    "brand": "Biltema",
+    "outletFlag": false,
+    "basePrice": 6700,
+    "unit": "m",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-042",
+    "name": "Hansgrohe Focus kjøkkenbatteri lavt krom",
+    "categoryId": "kitchen",
+    "brand": "Hansgrohe",
+    "outletFlag": true,
+    "basePrice": 178000,
+    "unit": "stk",
+    "warehouseIds": ["oslo"]
+  },
+  {
+    "sku": "PRD-043",
+    "name": "Varmekabel 18W/m 10m selvregulerende",
+    "categoryId": "electrical",
+    "brand": "Bosch",
+    "outletFlag": false,
+    "basePrice": 56000,
+    "unit": "m",
+    "warehouseIds": ["oslo", "bergen", "trondheim"]
+  },
+  {
+    "sku": "PRD-044",
+    "name": "Weber klinkermørtel grå 25kg",
+    "categoryId": "flooring",
+    "brand": "Weber",
+    "outletFlag": false,
+    "basePrice": 21500,
+    "unit": "kg",
+    "warehouseIds": ["oslo", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-045",
+    "name": "Grohe Eurostyle kjøkkenkran 2-greps krom",
+    "categoryId": "kitchen",
+    "brand": "Grohe",
+    "outletFlag": false,
+    "basePrice": 158000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-046",
+    "name": "Parkett eik børstet olje 14mm 2,38m2",
+    "categoryId": "flooring",
+    "brand": "Biltema",
+    "outletFlag": false,
+    "basePrice": 42800,
+    "unit": "m2",
+    "warehouseIds": ["oslo", "stavanger"]
+  },
+  {
+    "sku": "PRD-047",
+    "name": "Geberit Renova servant 60cm krom",
+    "categoryId": "bathroom",
+    "brand": "Geberit",
+    "outletFlag": false,
+    "basePrice": 145000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen"]
+  },
+  {
+    "sku": "PRD-048",
+    "name": "Bosch GCD 12 JL flisekutter",
+    "categoryId": "tools",
+    "brand": "Bosch",
+    "outletFlag": false,
+    "basePrice": 178000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "trondheim"]
+  },
+  {
+    "sku": "PRD-049",
+    "name": "Jotun Solberg vindusmaling hvit 3L",
+    "categoryId": "paint",
+    "brand": "Jotun",
+    "outletFlag": false,
+    "basePrice": 29500,
+    "unit": "l",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-050",
+    "name": "Oras Cubista engreps dusjbatteri",
+    "categoryId": "bathroom",
+    "brand": "Oras",
+    "outletFlag": false,
+    "basePrice": 198000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "stavanger"]
+  },
+  {
+    "sku": "PRD-051",
+    "name": "Drensrør perforert 110mm x 6m",
+    "categoryId": "outdoor",
+    "brand": "Biltema",
+    "outletFlag": false,
+    "basePrice": 11200,
+    "unit": "m",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-052",
+    "name": "Hansgrohe Metropol togreps baderomskran",
+    "categoryId": "bathroom",
+    "brand": "Hansgrohe",
+    "outletFlag": false,
+    "basePrice": 289000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "trondheim"]
+  },
+  {
+    "sku": "PRD-053",
+    "name": "Weber Terranova elastisk fliskleber 15kg",
+    "categoryId": "flooring",
+    "brand": "Weber",
+    "outletFlag": false,
+    "basePrice": 24800,
+    "unit": "kg",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-054",
+    "name": "Bosch PSR 18 LI-2 skrutrekker",
+    "categoryId": "tools",
+    "brand": "Bosch",
+    "outletFlag": true,
+    "basePrice": 129000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "stavanger"]
+  },
+  {
+    "sku": "PRD-055",
+    "name": "Grohe Rainshower System 310 dusjpanel",
+    "categoryId": "bathroom",
+    "brand": "Grohe",
+    "outletFlag": false,
+    "basePrice": 1245000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen"]
+  },
+  {
+    "sku": "PRD-056",
+    "name": "Jotun Trebitt beis nøytral 10L",
+    "categoryId": "paint",
+    "brand": "Jotun",
+    "outletFlag": false,
+    "basePrice": 58900,
+    "unit": "l",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-057",
+    "name": "Terrassebord trykkimpregnert 28x120mm 4,2m",
+    "categoryId": "outdoor",
+    "brand": "Biltema",
+    "outletFlag": false,
+    "basePrice": 16800,
+    "unit": "m",
+    "warehouseIds": ["oslo", "bergen", "trondheim"]
+  },
+  {
+    "sku": "PRD-058",
+    "name": "Geberit AquaClean Mera Comfort dusjtoalett",
+    "categoryId": "bathroom",
+    "brand": "Geberit",
+    "outletFlag": false,
+    "basePrice": 2499000,
+    "unit": "stk",
+    "warehouseIds": ["oslo"]
+  },
+  {
+    "sku": "PRD-059",
+    "name": "Oras Optima 2 togreps servant kran",
+    "categoryId": "bathroom",
+    "brand": "Oras",
+    "outletFlag": false,
+    "basePrice": 119000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-060",
+    "name": "Elektrisk panelovn 1000W hvit",
+    "categoryId": "electrical",
+    "brand": "Bosch",
+    "outletFlag": false,
+    "basePrice": 89000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-061",
+    "name": "Weber mørtel brannfast 5kg",
+    "categoryId": "outdoor",
+    "brand": "Weber",
+    "outletFlag": false,
+    "basePrice": 23400,
+    "unit": "kg",
+    "warehouseIds": ["oslo", "stavanger"]
+  },
+  {
+    "sku": "PRD-062",
+    "name": "Hansgrohe Pulsify E dusjpanel hvit/krom",
+    "categoryId": "bathroom",
+    "brand": "Hansgrohe",
+    "outletFlag": false,
+    "basePrice": 875000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen"]
+  },
+  {
+    "sku": "PRD-063",
+    "name": "Bosch GSR 18V-90 C borskrutrekker",
+    "categoryId": "tools",
+    "brand": "Bosch",
+    "outletFlag": false,
+    "basePrice": 234000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-064",
+    "name": "Jotun Polo maling vegg matt hvit 9L",
+    "categoryId": "paint",
+    "brand": "Jotun",
+    "outletFlag": false,
+    "basePrice": 34500,
+    "unit": "l",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-065",
+    "name": "Grohe Concetto kjøkkenkran C-pip uttrekk",
+    "categoryId": "kitchen",
+    "brand": "Grohe",
+    "outletFlag": false,
+    "basePrice": 298000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim"]
+  },
+  {
+    "sku": "PRD-066",
+    "name": "Vinylplank eik lys 4,5mm 2,21m2 pk",
+    "categoryId": "flooring",
+    "brand": "Biltema",
+    "outletFlag": false,
+    "basePrice": 28900,
+    "unit": "m2",
+    "warehouseIds": ["oslo", "bergen", "stavanger"]
+  },
+  {
+    "sku": "PRD-067",
+    "name": "Oras Medipro klinisk servant kran",
+    "categoryId": "bathroom",
+    "brand": "Oras",
+    "outletFlag": false,
+    "basePrice": 387000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "trondheim"]
+  },
+  {
+    "sku": "PRD-068",
+    "name": "Geberit Duotect dobbeltklemring 28mm",
+    "categoryId": "plumbing",
+    "brand": "Geberit",
+    "outletFlag": false,
+    "basePrice": 2900,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-069",
+    "name": "Weber brannmørtel 1250°C 1kg",
+    "categoryId": "outdoor",
+    "brand": "Weber",
+    "outletFlag": true,
+    "basePrice": 19800,
+    "unit": "kg",
+    "warehouseIds": ["oslo", "stavanger"]
+  },
+  {
+    "sku": "PRD-070",
+    "name": "Bosch GKS 18V-57 G rundsag",
+    "categoryId": "tools",
+    "brand": "Bosch",
+    "outletFlag": false,
+    "basePrice": 312000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim"]
+  },
+  {
+    "sku": "PRD-071",
+    "name": "Hansgrohe Vernis S kjøkkenbatteri høyt",
+    "categoryId": "kitchen",
+    "brand": "Hansgrohe",
+    "outletFlag": false,
+    "basePrice": 318000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "stavanger"]
+  },
+  {
+    "sku": "PRD-072",
+    "name": "Jotun Essence dekkmaling koksgrå 2,7L",
+    "categoryId": "paint",
+    "brand": "Jotun",
+    "outletFlag": false,
+    "basePrice": 27800,
+    "unit": "l",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-073",
+    "name": "Grohe Blue Pure kjøkkenkran med filter",
+    "categoryId": "kitchen",
+    "brand": "Grohe",
+    "outletFlag": false,
+    "basePrice": 567000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen"]
+  },
+  {
+    "sku": "PRD-074",
+    "name": "Geberit Mapress kobberpressfitting T-stykke 15mm",
+    "categoryId": "plumbing",
+    "brand": "Geberit",
+    "outletFlag": false,
+    "basePrice": 8400,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-075",
+    "name": "Weber fugmasse grå utendørs 600ml",
+    "categoryId": "outdoor",
+    "brand": "Weber",
+    "outletFlag": false,
+    "basePrice": 11900,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-076",
+    "name": "Oras Fjord 2-greps kjøkkenkran utvendig",
+    "categoryId": "kitchen",
+    "brand": "Oras",
+    "outletFlag": false,
+    "basePrice": 213000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-077",
+    "name": "Biltema hagebord med 2 benker trykkimpregnert",
+    "categoryId": "outdoor",
+    "brand": "Biltema",
+    "outletFlag": false,
+    "basePrice": 178000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim"]
+  },
+  {
+    "sku": "PRD-078",
+    "name": "Bosch GHG 18V-50 varmluftpistol",
+    "categoryId": "tools",
+    "brand": "Bosch",
+    "outletFlag": true,
+    "basePrice": 145000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen"]
+  },
+  {
+    "sku": "PRD-079",
+    "name": "Fliser vegg metro hvit blank 7,5x15cm m2",
+    "categoryId": "flooring",
+    "brand": "Weber",
+    "outletFlag": false,
+    "basePrice": 24500,
+    "unit": "m2",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-080",
+    "name": "Geberit Silent-db20 avløpsrør 50mm x 3m",
+    "categoryId": "plumbing",
+    "brand": "Geberit",
+    "outletFlag": false,
+    "basePrice": 34500,
+    "unit": "m",
+    "warehouseIds": ["oslo", "bergen", "stavanger"]
+  },
+  {
+    "sku": "PRD-081",
+    "name": "Hansgrohe Axor Starck servant kran 1-greps",
+    "categoryId": "bathroom",
+    "brand": "Hansgrohe",
+    "outletFlag": false,
+    "basePrice": 678000,
+    "unit": "stk",
+    "warehouseIds": ["oslo"]
+  },
+  {
+    "sku": "PRD-082",
+    "name": "Jotun Hardtop XP epoxy gulvmaling 5L",
+    "categoryId": "paint",
+    "brand": "Jotun",
+    "outletFlag": false,
+    "basePrice": 98500,
+    "unit": "l",
+    "warehouseIds": ["oslo", "bergen", "trondheim"]
+  },
+  {
+    "sku": "PRD-083",
+    "name": "Oras Electra 6130 berøringsfri servant kran",
+    "categoryId": "bathroom",
+    "brand": "Oras",
+    "outletFlag": false,
+    "basePrice": 524000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen"]
+  },
+  {
+    "sku": "PRD-084",
+    "name": "Weber Renotec fuktsperre 15L",
+    "categoryId": "paint",
+    "brand": "Weber",
+    "outletFlag": false,
+    "basePrice": 67800,
+    "unit": "l",
+    "warehouseIds": ["oslo", "stavanger"]
+  },
+  {
+    "sku": "PRD-085",
+    "name": "Bosch GRL 650 CHVG lasernivå roterende",
+    "categoryId": "tools",
+    "brand": "Bosch",
+    "outletFlag": false,
+    "basePrice": 1245000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen"]
+  },
+  {
+    "sku": "PRD-086",
+    "name": "Grohe Atrio kjøkkenkran matt svart",
+    "categoryId": "kitchen",
+    "brand": "Grohe",
+    "outletFlag": false,
+    "basePrice": 487000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "trondheim"]
+  },
+  {
+    "sku": "PRD-087",
+    "name": "Geberit Mepla koblings-T-stykke 20mm",
+    "categoryId": "plumbing",
+    "brand": "Geberit",
+    "outletFlag": false,
+    "basePrice": 11800,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-088",
+    "name": "Terrassebeis oljebeis nøytral 5L",
+    "categoryId": "outdoor",
+    "brand": "Jotun",
+    "outletFlag": false,
+    "basePrice": 38900,
+    "unit": "l",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-089",
+    "name": "Hansgrohe Talis S kjøkkenkran høy krom",
+    "categoryId": "kitchen",
+    "brand": "Hansgrohe",
+    "outletFlag": false,
+    "basePrice": 234000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-090",
+    "name": "Biltema hageslange armert 1/2\" 25m",
+    "categoryId": "outdoor",
+    "brand": "Biltema",
+    "outletFlag": false,
+    "basePrice": 34500,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-091",
+    "name": "Bosch GTS 18V-216 bordsag",
+    "categoryId": "tools",
+    "brand": "Bosch",
+    "outletFlag": false,
+    "basePrice": 1890000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen"]
+  },
+  {
+    "sku": "PRD-092",
+    "name": "Oras Hydra 2-greps dusjbatteri innbygd",
+    "categoryId": "bathroom",
+    "brand": "Oras",
+    "outletFlag": true,
+    "basePrice": 267000,
+    "unit": "stk",
+    "warehouseIds": ["oslo"]
+  },
+  {
+    "sku": "PRD-093",
+    "name": "Jotun Jotaplast veggmaling hvit 10L",
+    "categoryId": "paint",
+    "brand": "Jotun",
+    "outletFlag": false,
+    "basePrice": 41200,
+    "unit": "l",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-094",
+    "name": "Geberit Duofix WC-element vegg 112cm",
+    "categoryId": "bathroom",
+    "brand": "Geberit",
+    "outletFlag": false,
+    "basePrice": 456000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen"]
+  },
+  {
+    "sku": "PRD-095",
+    "name": "Weber drain avrenningssystem terrasse",
+    "categoryId": "outdoor",
+    "brand": "Weber",
+    "outletFlag": false,
+    "basePrice": 54500,
+    "unit": "m",
+    "warehouseIds": ["oslo", "stavanger"]
+  },
+  {
+    "sku": "PRD-096",
+    "name": "Grohe Grandera baderomsarmatur sett",
+    "categoryId": "bathroom",
+    "brand": "Grohe",
+    "outletFlag": false,
+    "basePrice": 1876000,
+    "unit": "stk",
+    "warehouseIds": ["oslo"]
+  },
+  {
+    "sku": "PRD-097",
+    "name": "Biltema målestokk digital 5m laser",
+    "categoryId": "tools",
+    "brand": "Biltema",
+    "outletFlag": false,
+    "basePrice": 24500,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "trondheim", "stavanger"]
+  },
+  {
+    "sku": "PRD-098",
+    "name": "Hansgrohe ShowerSelect termostat innbygd",
+    "categoryId": "bathroom",
+    "brand": "Hansgrohe",
+    "outletFlag": true,
+    "basePrice": 398000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "trondheim"]
+  },
+  {
+    "sku": "PRD-099",
+    "name": "Weber Vario 2K epoxy membran 15kg",
+    "categoryId": "flooring",
+    "brand": "Weber",
+    "outletFlag": false,
+    "basePrice": 89500,
+    "unit": "kg",
+    "warehouseIds": ["oslo", "bergen", "trondheim"]
+  },
+  {
+    "sku": "PRD-100",
+    "name": "Geberit Pluvia takavrenning komplett sett",
+    "categoryId": "outdoor",
+    "brand": "Geberit",
+    "outletFlag": false,
+    "basePrice": 678000,
+    "unit": "stk",
+    "warehouseIds": ["oslo", "bergen", "stavanger"]
+  }
+]

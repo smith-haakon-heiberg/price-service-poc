@@ -1,0 +1,36 @@
+[
+  {
+    "id": "plumbing",
+    "name": "Rør og VVS"
+  },
+  {
+    "id": "electrical",
+    "name": "Elektro"
+  },
+  {
+    "id": "tools",
+    "name": "Verktøy"
+  },
+  {
+    "id": "paint",
+    "name": "Maling og overflate"
+  },
+  {
+    "id": "flooring",
+    "name": "Gulv og fliser"
+  },
+  {
+    "id": "kitchen",
+    "name": "Kjøkken",
+    "parentId": "plumbing"
+  },
+  {
+    "id": "bathroom",
+    "name": "Bad og sanitær",
+    "parentId": "plumbing"
+  },
+  {
+    "id": "outdoor",
+    "name": "Utendørs og hage"
+  }
+]

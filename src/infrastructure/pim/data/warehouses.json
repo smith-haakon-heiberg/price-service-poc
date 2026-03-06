@@ -1,0 +1,22 @@
+[
+  {
+    "id": "oslo",
+    "name": "Oslo Sentrallager",
+    "location": "Oslo"
+  },
+  {
+    "id": "bergen",
+    "name": "Bergen Lager",
+    "location": "Bergen"
+  },
+  {
+    "id": "trondheim",
+    "name": "Trondheim Lager",
+    "location": "Trondheim"
+  },
+  {
+    "id": "stavanger",
+    "name": "Stavanger Lager",
+    "location": "Stavanger"
+  }
+]

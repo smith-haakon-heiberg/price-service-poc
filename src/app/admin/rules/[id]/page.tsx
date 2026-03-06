@@ -95,7 +95,15 @@ export default async function RuleDetailPage({ params }: PageProps) {
             )}
           </div>
         </div>
-        <DeleteRuleButton ruleId={rule.id} ruleName={rule.name} />
+        <div className="flex items-center gap-2">
+          <a
+            href={`/admin/rules/${rule.id}/edit`}
+            className="px-3 py-1.5 bg-blue-50 text-blue-600 text-sm rounded border border-blue-200 hover:bg-blue-100 font-medium"
+          >
+            Edit Rule
+          </a>
+          <DeleteRuleButton ruleId={rule.id} ruleName={rule.name} />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

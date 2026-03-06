@@ -1,6 +1,7 @@
-import type { Product } from "@/domain/types";
+import type { Product, EffectivePrice } from "@/domain/types";
 import PriceDisplay from "@/app/admin/_components/PriceDisplay";
 import ProductFilters from "./ProductFilters";
+import { getPriceService } from "@/app/api/_lib/service-factory";
 
 async function fetchProducts(
   searchParams: Record<string, string | undefined>
@@ -19,6 +20,32 @@ async function fetchProducts(
   return res.json() as Promise<Product[]>;
 }
 
+async function calculateGenericPrices(
+  products: Product[]
+): Promise<Map<string, EffectivePrice>> {
+  const service = getPriceService();
+  const today = new Date().toISOString().split("T")[0]!;
+  const results = new Map<string, EffectivePrice>();
+
+  await Promise.all(
+    products.map(async (p) => {
+      try {
+        const price = await service.calculatePrice({
+          sku: p.sku,
+          customerType: "private",
+          quantity: 1,
+          date: today,
+        });
+        results.set(p.sku, price);
+      } catch {
+        // skip products that fail calculation
+      }
+    })
+  );
+
+  return results;
+}
+
 interface PageProps {
   searchParams: Promise<Record<string, string | undefined>>;
 }
@@ -33,6 +60,8 @@ export default async function ProductsPage({ searchParams }: PageProps) {
   } catch (err) {
     error = err instanceof Error ? err.message : "Failed to load products";
   }
+
+  const priceMap = products.length > 0 ? await calculateGenericPrices(products) : new Map<string, EffectivePrice>();
 
   const categories = [...new Set(products.map((p) => p.categoryId))].sort();
   const brands = [...new Set(products.map((p) => p.brand))].sort();
@@ -67,6 +96,7 @@ export default async function ProductsPage({ searchParams }: PageProps) {
               <th>Category</th>
               <th>Brand</th>
               <th className="text-right">Base Price</th>
+              <th className="text-right">List Price</th>
               <th>Unit</th>
               <th>Outlet</th>
               <th>Warehouses</th>
@@ -75,7 +105,7 @@ export default async function ProductsPage({ searchParams }: PageProps) {
           <tbody>
             {products.length === 0 && (
               <tr>
-                <td colSpan={8} className="text-center text-muted py-8">
+                <td colSpan={9} className="text-center text-muted py-8">
                   No products found.
                 </td>
               </tr>
@@ -98,6 +128,16 @@ export default async function ProductsPage({ searchParams }: PageProps) {
                     ore={product.basePrice}
                     className="font-mono text-sm"
                   />
+                </td>
+                <td className="text-right">
+                  {priceMap.has(product.sku) ? (
+                    <PriceDisplay
+                      ore={priceMap.get(product.sku)!.finalPrice}
+                      className={`font-mono text-sm ${priceMap.get(product.sku)!.finalPrice !== product.basePrice ? "text-blue-600 font-semibold" : ""}`}
+                    />
+                  ) : (
+                    <span className="text-muted text-xs">-</span>
+                  )}
                 </td>
                 <td className="text-sm text-muted">{product.unit}</td>
                 <td>

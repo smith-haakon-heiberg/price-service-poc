@@ -31,6 +31,7 @@ export default function ProductFilters({
       } else {
         params.delete(key);
       }
+      params.delete("page"); // reset to page 1 on filter change
       startTransition(() => {
         router.push(`/admin/products?${params.toString()}`);
       });

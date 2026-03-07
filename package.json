@@ -13,22 +13,21 @@
     "db:seed": "tsx src/infrastructure/db/seed.ts"
   },
   "dependencies": {
-    "better-sqlite3": "^11.7.0",
-    "next": "^15.1.0",
+    "better-sqlite3": "^12.6.2",
+    "next": "^16.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "uuid": "^11.0.0"
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.12",
-    "@types/node": "^22.0.0",
+    "@types/node": "^25.3.5",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "@types/uuid": "^10.0.0",
     "typescript": "^5.7.0",
-    "vitest": "^3.0.0",
+    "vitest": "^4.0.18",
     "tsx": "^4.19.0",
-    "tailwindcss": "^4.0.0",
-    "@tailwindcss/postcss": "^4.0.0"
+    "tailwindcss": "^4.2.1",
+    "@tailwindcss/postcss": "^4.2.1"
   }
 }

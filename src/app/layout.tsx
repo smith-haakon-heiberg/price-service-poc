@@ -15,6 +15,7 @@ const navItems = [
   { href: "/admin/customers", label: "Customers", icon: "C" },
   { href: "/admin/categories", label: "Categories", icon: "G" },
   { href: "/admin/warehouses", label: "Warehouses", icon: "W" },
+  { href: "/admin/integrations/pim", label: "PIM Integrator", icon: "I" },
 ];
 
 export default function RootLayout({

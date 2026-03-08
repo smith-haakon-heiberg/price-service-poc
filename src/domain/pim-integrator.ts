@@ -20,6 +20,12 @@ export interface ProviderConfig {
   authHeader?: string;
   /** Token / key value */
   authValue?: string;
+  /**
+   * Dot-path to the field on a remote item that serves as its stable identity
+   * (used as remoteId for CRUD merge on resync). Auto-detects "id", "_id",
+   * "uuid", "code" when left blank.
+   */
+  idPath?: string;
 }
 
 /** A single field discovered from a remote product item. */

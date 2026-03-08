@@ -17,12 +17,27 @@ import type { Product } from '@/domain/types';
 // ---------------------------------------------------------------------------
 
 type Step = 'provider' | 'discover' | 'map' | 'preview';
+type Mode = 'status' | 'wizard';
 
 interface DiscoverResponse {
   fields: DiscoveredField[];
   rawSample: unknown;
   detectedDataPath: string;
   suggestions: Record<string, string>;
+  error?: string;
+}
+
+interface SyncStats {
+  added: number;
+  updated: number;
+  removed: number;
+  unchanged: number;
+}
+
+interface SyncResult {
+  count?: number;
+  syncedAt?: string;
+  stats?: SyncStats;
   error?: string;
 }
 
@@ -99,15 +114,131 @@ function LabeledInput({
 }
 
 // ---------------------------------------------------------------------------
+// Status view (existing config)
+// ---------------------------------------------------------------------------
+
+function StatusView({
+  config,
+  onEdit,
+  onResync,
+}: {
+  config: IntegratorConfig;
+  onEdit: () => void;
+  onResync: () => void;
+}) {
+  const [resyncState, setResyncState] = useState<'idle' | 'running' | 'done' | 'error'>('idle');
+  const [resyncResult, setResyncResult] = useState<SyncResult | null>(null);
+
+  async function handleResync() {
+    setResyncState('running');
+    setResyncResult(null);
+    try {
+      const res = await fetch('/api/integrations/pim/sync', { method: 'POST' });
+      const data = await res.json() as SyncResult;
+      if (!res.ok || data.error) {
+        setResyncResult(data);
+        setResyncState('error');
+      } else {
+        setResyncResult(data);
+        setResyncState('done');
+        onResync();
+      }
+    } catch (err) {
+      setResyncResult({ error: err instanceof Error ? err.message : 'Unknown error' });
+      setResyncState('error');
+    }
+  }
+
+  const provider = config.provider!;
+
+  return (
+    <div className="max-w-2xl">
+      <div className="bg-card-bg border border-border rounded-lg p-5 mb-4">
+        <h2 className="text-base font-semibold mb-3">Active configuration</h2>
+        <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-sm">
+          <dt className="text-muted">Base URL</dt>
+          <dd className="font-mono">{provider.baseUrl}</dd>
+          <dt className="text-muted">Products path</dt>
+          <dd className="font-mono">{provider.productsPath}</dd>
+          {provider.categoriesPath && (
+            <>
+              <dt className="text-muted">Categories path</dt>
+              <dd className="font-mono">{provider.categoriesPath}</dd>
+            </>
+          )}
+          {provider.dataPath && (
+            <>
+              <dt className="text-muted">Data path</dt>
+              <dd className="font-mono">{provider.dataPath}</dd>
+            </>
+          )}
+          {provider.idPath && (
+            <>
+              <dt className="text-muted">ID field path</dt>
+              <dd className="font-mono">{provider.idPath}</dd>
+            </>
+          )}
+          <dt className="text-muted">Authentication</dt>
+          <dd>{provider.authType === 'none' ? 'None' : provider.authType === 'bearer' ? 'Bearer token' : `API key (${provider.authHeader ?? ''})`}</dd>
+          {config.lastSync && (
+            <>
+              <dt className="text-muted">Last synced</dt>
+              <dd>{new Date(config.lastSync).toLocaleString()}</dd>
+            </>
+          )}
+        </dl>
+      </div>
+
+      {resyncResult && resyncState === 'done' && resyncResult.stats && (
+        <div className="bg-green-50 border border-green-200 text-green-800 text-sm px-4 py-3 rounded mb-4">
+          <strong>Sync complete</strong> — {resyncResult.count} products total
+          {' · '}{resyncResult.stats.added} added
+          {' · '}{resyncResult.stats.updated} updated
+          {' · '}{resyncResult.stats.removed} removed
+          {' · '}{resyncResult.stats.unchanged} unchanged
+        </div>
+      )}
+
+      {resyncResult && resyncState === 'error' && (
+        <div className="bg-red-50 border border-red-200 text-red-700 text-sm px-4 py-3 rounded mb-4">
+          <strong>Sync failed:</strong> {resyncResult.error}
+        </div>
+      )}
+
+      <div className="flex gap-3 items-center">
+        <button
+          onClick={handleResync}
+          disabled={resyncState === 'running'}
+          className="px-4 py-2 bg-blue-600 text-white rounded text-sm font-medium hover:bg-blue-700 disabled:opacity-50 flex items-center gap-2"
+        >
+          {resyncState === 'running' && (
+            <span className="inline-block w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+          )}
+          {resyncState === 'running' ? 'Syncing…' : 'Resync now'}
+        </button>
+        <button
+          onClick={onEdit}
+          className="px-4 py-2 border border-border rounded text-sm hover:bg-gray-50"
+        >
+          Edit configuration
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
 // Step 1: Provider configuration
 // ---------------------------------------------------------------------------
 
 function ProviderStep({
   initial,
   onNext,
+  onCancel,
 }: {
   initial: ProviderConfig;
   onNext: (c: ProviderConfig) => void;
+  onCancel?: () => void;
 }) {
   const [cfg, setCfg] = useState<ProviderConfig>(initial);
 
@@ -147,6 +278,12 @@ function ProviderStep({
         onChange={(v) => set('dataPath', v)}
         placeholder="data"
       />
+      <LabeledInput
+        label="Remote ID field path (leave blank to auto-detect)"
+        value={cfg.idPath ?? ''}
+        onChange={(v) => set('idPath', v)}
+        placeholder="id"
+      />
 
       <div className="mb-3">
         <label className="block text-sm font-medium mb-1">Authentication</label>
@@ -179,13 +316,23 @@ function ProviderStep({
         />
       )}
 
-      <button
-        onClick={() => onNext(cfg)}
-        disabled={!cfg.baseUrl || !cfg.productsPath}
-        className="mt-2 px-4 py-2 bg-blue-600 text-white rounded text-sm font-medium hover:bg-blue-700 disabled:opacity-50"
-      >
-        Discover Schema →
-      </button>
+      <div className="flex gap-3 mt-2">
+        <button
+          onClick={() => onNext(cfg)}
+          disabled={!cfg.baseUrl || !cfg.productsPath}
+          className="px-4 py-2 bg-blue-600 text-white rounded text-sm font-medium hover:bg-blue-700 disabled:opacity-50"
+        >
+          Discover Schema →
+        </button>
+        {onCancel && (
+          <button
+            onClick={onCancel}
+            className="px-4 py-2 border border-border rounded text-sm hover:bg-gray-50"
+          >
+            Cancel
+          </button>
+        )}
+      </div>
     </div>
   );
 }
@@ -479,6 +626,11 @@ export default function IntegratorClient({
 }: {
   initialConfig: IntegratorConfig;
 }) {
+  // Start in status mode when there is a saved provider config
+  const hasExistingConfig = !!initialConfig.provider;
+  const [mode, setMode] = useState<Mode>(hasExistingConfig ? 'status' : 'wizard');
+  const [liveConfig, setLiveConfig] = useState<IntegratorConfig>(initialConfig);
+
   const [step, setStep] = useState<Step>('provider');
   const [provider, setProvider] = useState<ProviderConfig>(
     initialConfig.provider ?? DEFAULT_PROVIDER,
@@ -490,6 +642,16 @@ export default function IntegratorClient({
   const [previewError, setPreviewError] = useState<string | undefined>();
   const [previewLoading, setPreviewLoading] = useState(false);
   const [saveState, setSaveState] = useState<'idle' | 'saving' | 'syncing' | 'done' | 'error'>('idle');
+
+  function enterEditMode() {
+    setProvider(liveConfig.provider ?? DEFAULT_PROVIDER);
+    setMappings(liveConfig.mappings);
+    setStep('provider');
+    setDiscoveryResult(null);
+    setDiscoveryError(undefined);
+    setSaveState('idle');
+    setMode('wizard');
+  }
 
   // Step 1 → 2: discover schema
   async function handleDiscover(cfg: ProviderConfig) {
@@ -559,10 +721,32 @@ export default function IntegratorClient({
       const syncRes = await fetch('/api/integrations/pim/sync', { method: 'POST' });
       if (!syncRes.ok) throw new Error((await syncRes.json() as { error?: string }).error ?? 'Sync failed');
 
+      const syncData = await syncRes.json() as { syncedAt?: string };
+      const updatedConfig: IntegratorConfig = { ...config, lastSync: syncData.syncedAt };
+      setLiveConfig(updatedConfig);
       setSaveState('done');
+
+      // After a moment, return to status view
+      setTimeout(() => setMode('status'), 1500);
     } catch {
       setSaveState('error');
     }
+  }
+
+  if (mode === 'status') {
+    return (
+      <StatusView
+        config={liveConfig}
+        onEdit={enterEditMode}
+        onResync={() => {
+          // Refresh liveConfig.lastSync after resync
+          fetch('/api/integrations/pim/config')
+            .then((r) => r.json())
+            .then((cfg: IntegratorConfig) => setLiveConfig(cfg))
+            .catch(() => {/* ignore */});
+        }}
+      />
+    );
   }
 
   return (
@@ -570,7 +754,11 @@ export default function IntegratorClient({
       <StepIndicator current={step} />
 
       {step === 'provider' && (
-        <ProviderStep initial={provider} onNext={handleDiscover} />
+        <ProviderStep
+          initial={provider}
+          onNext={handleDiscover}
+          onCancel={hasExistingConfig ? () => setMode('status') : undefined}
+        />
       )}
 
       {step === 'discover' && <DiscoverStep error={discoveryError} />}

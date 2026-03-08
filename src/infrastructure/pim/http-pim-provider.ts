@@ -108,6 +108,20 @@ export class HttpPimProvider implements PimProvider {
     return [];
   }
 
+  private extractRemoteId(item: unknown): string | undefined {
+    const obj = item as Record<string, unknown>;
+    // Use configured idPath first
+    if (this.config.idPath) {
+      const val = resolveSimplePath(item, this.config.idPath);
+      if (val != null) return String(val);
+    }
+    // Auto-detect common identity fields
+    for (const key of ['id', '_id', 'uuid', 'code']) {
+      if (obj[key] != null) return String(obj[key]);
+    }
+    return undefined;
+  }
+
   private mapItem(item: unknown): Product | null {
     const extract = <K extends keyof FieldMappings>(key: K): unknown => {
       const rule = this.mappings[key];
@@ -125,6 +139,8 @@ export class HttpPimProvider implements PimProvider {
       ? rawWarehouses.map(String)
       : [];
 
+    const remoteId = this.extractRemoteId(item);
+
     return {
       sku,
       name,
@@ -134,6 +150,7 @@ export class HttpPimProvider implements PimProvider {
       basePrice: Number(extract('basePrice') ?? 0),
       unit: String(extract('unit') ?? 'stk'),
       warehouseIds,
+      ...(remoteId !== undefined ? { remoteId } : {}),
     };
   }
 

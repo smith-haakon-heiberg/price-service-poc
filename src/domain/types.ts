@@ -122,6 +122,8 @@ export interface Product {
   basePrice: number; // in-price in ore
   unit: string;
   warehouseIds: string[];
+  /** Stable identifier from the source PIM record — used for CRUD merging on resync. */
+  remoteId?: string;
 }
 
 export interface Category {

@@ -1,5 +1,74 @@
 # Price System - Architecture & Design Document
 
+## System Role: Connector Service
+
+The price service is a **connector**. It owns no master data of its own — instead it integrates with the systems that do, pulls the data it needs, evaluates pricing rules, and returns a calculated price.
+
+```
+External systems                  Price Service             Consumers
+─────────────────                 ─────────────             ─────────
+PIM  ──────────── products ──────►│             │
+CRM  ──────────── customers ─────►│   Pricing   │──── price responses ──► APIs
+ERP/OMS ─────────┬ warehouses ───►│   Engine    │                         Storefront
+                 └ projects ─────►│             │                         Checkout
+                                  └─────────────┘
+                                        ▲
+                                  price requests
+                                (SKU + optional context)
+```
+
+### Integration points
+
+| Domain concept | Source system | Integration strategy |
+|---------------|---------------|---------------------|
+| **Products** | PIM | Field-mapping wizard → paginated import → local snapshot |
+| **Customers** | CRM | Adapter interface; standalone/fixture fallback when not configured |
+| **Warehouses** | ERP / OMS | Adapter interface; local JSON fallback |
+| **Projects** | ERP / OMS | Adapter interface; local JSON fallback |
+
+### Integration pattern
+
+Every external data source is hidden behind a domain interface:
+
+```
+domain/pim-provider.ts          PimProvider interface
+domain/crm-provider.ts          CrmProvider interface  (planned)
+domain/erp-provider.ts          ErpProvider interface  (planned)
+    │
+    ├── infrastructure/pim/json-pim-provider.ts        Fixture fallback
+    ├── infrastructure/pim/imported-pim-provider.ts    Local import snapshot
+    ├── infrastructure/pim/http-pim-provider.ts        Live HTTP adapter
+    │
+    ├── infrastructure/crm/standalone-crm-provider.ts  (planned)
+    ├── infrastructure/crm/http-crm-provider.ts        (planned)
+    │
+    └── infrastructure/erp/json-erp-provider.ts        (planned)
+        infrastructure/erp/http-erp-provider.ts        (planned)
+```
+
+The `service-factory.ts` reads the saved integrator configuration at request time and instantiates the appropriate provider. Switching integrations requires no changes to the domain or application layer.
+
+### PIM integrator detail
+
+The PIM integration is the most developed integration. It includes:
+
+- **Schema discovery**: fetches one product from the remote endpoint and flattens its structure into typed field paths, handling key-value array patterns (`attributes[key=in_price].value`), identifier arrays (`identifiers[type=sku].value`), and primary-flag arrays (`categories[isPrimary=true].id`)
+- **Field mapping**: a UI-driven mapping from remote field paths to the internal `Product` shape, with value transforms (multiply100, split_comma, to_boolean, etc.)
+- **Auto-suggestions**: heuristic matching between remote field names and internal field names
+- **Full paginated import**: fetches all products page-by-page (stops on short page, no reliance on a `total` field), writes to `data/pim-imported.json`
+- **Local snapshot provider**: the price engine reads the snapshot — no outbound HTTP calls during price calculations
+
+### Standalone / fallback mode
+
+When no integration is configured for a domain concept, a local fallback implementation is used:
+
+- `JsonPimProvider` reads from `src/infrastructure/pim/data/products.json`
+- Warehouse and project fixtures will follow the same pattern
+
+This means the service is fully functional in isolation without any external dependencies, which is important for local development, testing, and demos.
+
+---
+
 ## Overview
 
 A proof-of-concept pricing platform that models pricing as a **rules and overrides problem** with full explainability. Supports both private/consumer and professional/B2B pricing scenarios.
